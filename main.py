@@ -10,7 +10,7 @@ def create_app(_config: Config):
 
     @_app.get("/")
     def index():
-        return {"message": "Welcome to properties API"}
+        return {"message": "FastAPI starter template, Use freely"}
 
     add_routers(app=_app, config=_config)
     return _app
