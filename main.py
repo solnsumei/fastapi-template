@@ -23,7 +23,7 @@ config = Config.load_config()
 app = create_app(config)
 
 # Initialize database
-init_db(config=config, app=app)
+init_db(app)
 
 if __name__ == '__main__':
     uvicorn.run("main:app", port=config.PORT, reload=True)

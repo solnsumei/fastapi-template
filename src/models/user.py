@@ -1,7 +1,6 @@
 from passlib.context import CryptContext
 from tortoise.contrib.pydantic import pydantic_model_creator
-from tortoise import fields
-from .basemodel import BaseModel
+from src.models.basemodel import BaseModel, fields
 
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
