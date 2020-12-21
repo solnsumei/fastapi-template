@@ -5,7 +5,6 @@ from tortoise import fields, models
 
 class BaseModel(models.Model):
     id = fields.UUIDField(pk=True)
-    status = fields.CharEnumField(Status, default=Status.ACTIVE)
     created_at = fields.DatetimeField(null=True, auto_now_add=True)
     modified_at = fields.DatetimeField(null=True, auto_now=True)
 
@@ -36,7 +35,14 @@ class BaseModel(models.Model):
         __abstract__ = True
 
 
-class SluggableModel(BaseModel):
+class ModelWithStatus(BaseModel):
+    status = fields.CharEnumField(Status, default=Status.ACTIVE)
+
+    class Meta:
+        __abstract__ = True
+
+
+class SluggableModel(ModelWithStatus):
     slug = fields.CharField(max_length=70)
 
     """ Database methods """

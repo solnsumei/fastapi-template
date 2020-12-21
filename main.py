@@ -1,11 +1,11 @@
 import uvicorn
-from fastapi import FastAPI, Depends
-from config import Config
-from db import init_db
-from routes import add_routers
+from fastapi import FastAPI
+from src.config.settings import Settings
+from src.config.db import init_db
+from src.routes import add_routers
 
 
-def create_app(_config: Config):
+def create_app(_config: Settings):
     _app = FastAPI()
 
     @_app.get("/")
@@ -17,7 +17,7 @@ def create_app(_config: Config):
 
 
 # Load configuration
-config = Config.load_config()
+config = Settings.load_config()
 
 # Create app
 app = create_app(config)

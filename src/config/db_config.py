@@ -1,6 +1,6 @@
-from config import Config
+from .settings import Settings
 
-settings = Config.load_config()
+settings = Settings.load_config()
 
 # App db config
 DB_CONFIG = {

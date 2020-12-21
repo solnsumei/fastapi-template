@@ -1,5 +1,5 @@
 from tortoise import Tortoise, run_async
-from config import Config
+from from .db_config import DB_CONFIG
 from src.models import User
 
 
@@ -10,12 +10,10 @@ async def init_db():
     # Generate the schema
     await Tortoise.generate_schemas()
 
-app_config = Config.load_config()
-
-async def migrate_seed(_config):
+async def migrate_seed():
     await init_db()
     # Add migration script here
 
 
 if __name__ == "__main__":
-    run_async(migrate_admin_user(app_config))
+    run_async(migrate_admin_user())

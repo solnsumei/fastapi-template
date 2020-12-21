@@ -3,7 +3,7 @@ from os.path import join, dirname
 from dotenv import load_dotenv
 
 
-class Config:
+class Settings:
     APP_ENVIRONMENT: str = None
     SECRET_KEY: str = None
     PORT: int = None
@@ -14,7 +14,7 @@ class Config:
 
     @classmethod
     def load_config(cls):
-        dotenv_path = join(dirname(__file__), '.env')
+        dotenv_path = join(dirname(__file__), '../../.env')
         load_dotenv(dotenv_path)
 
         cls.APP_ENVIRONMENT = os.environ.get('ENVIRONMENT')

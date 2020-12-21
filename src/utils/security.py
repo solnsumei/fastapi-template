@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from jose import JWTError, jwt
 from fastapi import Depends
 from fastapi.security import HTTPBearer
-from config import Config
+from src.config.settings import Settings as Config
 from src.models import User
 from .exceptions import UnauthorisedException
 
