@@ -18,7 +18,7 @@ class BaseRouter(APIRouter):
             return await response_schema.from_queryset(model.all())
 
         @self.get("/{item_id}", response_model=response_schema)
-        async def fetch_one(item_id: int):
+        async def fetch_one(item_id: str):
             return await response_schema \
                 .from_queryset_single(model.get(id=item_id))
 
@@ -28,12 +28,13 @@ class BaseRouter(APIRouter):
             return await response_schema.from_tortoise_orm(new_item)
 
         @self.put("/{item_id}", response_model=response_schema)
-        async def update(item_id: int, item: request_schema):
+        async def update(item_id: str, item: request_schema):
+            print(item.dict())
             updated_item = await model.update_one(item_id, item)
             return await response_schema.from_queryset_single(updated_item)
 
         @self.delete("/{item_id}")
-        async def delete(item_id: int):
+        async def delete(item_id: str):
             await model.delete_one(item_id)
             return {"message": "Item deleted successfully"}
 

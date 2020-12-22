@@ -8,3 +8,6 @@ router = BaseRouter(
     request_schema=RoleSchema,
     response_schema=RolePydantic
 )
+
+router.load_crud_routes()
+
