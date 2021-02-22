@@ -1,4 +1,4 @@
-from .basemodel import BaseModel, fields
+from src.models.base.basemodel import BaseModel, fields
 
 
 class Role(BaseModel):

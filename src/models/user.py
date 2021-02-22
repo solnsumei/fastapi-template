@@ -1,6 +1,5 @@
 from passlib.context import CryptContext
-from tortoise.exceptions import NoValuesFetched
-from .basemodel import ModelWithStatus, fields
+from src.models.base.basemodel import ModelWithStatus, fields
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
