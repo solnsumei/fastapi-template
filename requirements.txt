@@ -1,3 +1,4 @@
+aerich==0.5.0
 aiomysql==0.0.21
 aioredis==1.3.1
 aiosmtplib==1.1.4
@@ -8,6 +9,8 @@ blinker==1.4
 certifi==2020.12.5
 cffi==1.14.4
 click==7.1.2
+ddlparse==1.9.0
+dictdiffer==0.8.1
 dnspython==2.0.0
 ecdsa==0.14.1
 email-validator==1.1.2
@@ -27,6 +30,7 @@ pyasn1==0.4.8
 pycparser==2.20
 pydantic==1.7.3
 PyMySQL==0.9.3
+pyparsing==2.4.7
 PyPika==0.44.1
 python-dotenv==0.15.0
 python-jose==3.2.0
@@ -41,6 +45,6 @@ sniffio==1.2.0
 sortedcontainers==2.3.0
 starlette==0.13.6
 text-unidecode==1.3
-tortoise-orm==0.16.18
+tortoise-orm==0.16.21
 typing-extensions==3.7.4.3
 uvicorn==0.13.0
